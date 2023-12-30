@@ -11,6 +11,8 @@ export default function Home() {
 
   const firstText = useRef(null);
   const secondText = useRef(null);
+  const thirdText = useRef(null);
+  const fourthText = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
   let direction = -1;
@@ -28,7 +30,14 @@ export default function Home() {
       x: "-500px",
     })
     requestAnimationFrame(animate);
+
+    
+
+
   }, [])
+
+    
+
 
   const animate = () => {
     if(xPercent < -100){
@@ -39,6 +48,8 @@ export default function Home() {
     }
     gsap.set(firstText.current, {xPercent: xPercent})
     gsap.set(secondText.current, {xPercent: xPercent})
+    gsap.set(thirdText.current, {xPercent: xPercent})
+    gsap.set(fourthText.current, {xPercent: xPercent})
     requestAnimationFrame(animate);
     xPercent += 0.1 * direction;
   }
@@ -52,8 +63,12 @@ export default function Home() {
       />
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>Freelance Developer -</p>
-          <p ref={secondText}>Freelance Developer -</p>
+          <p ref={firstText}>LUCAS VADLAMUDI -</p>
+          <p ref={secondText}>LUCAS VADLAMUDI -</p>
+        </div>
+        <div ref={slider} className={styles.slider}>
+          <p ref={thirdText}>LUCAS VADLAMUDI -</p>
+          <p ref={fourthText}>LUCAS VADLAMUDI -</p>
         </div>
       </div>
       <div data-scroll data-scroll-speed={0.1} className={styles.description}>
