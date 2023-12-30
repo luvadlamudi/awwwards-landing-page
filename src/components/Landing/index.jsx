@@ -13,9 +13,11 @@ export default function Home() {
   const secondText = useRef(null);
   const thirdText = useRef(null);
   const fourthText = useRef(null);
+  const fifthText = useRef(null);
+  const sixthText = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
-  let direction = -1;
+  let direction = -.5;
 
   useLayoutEffect( () => {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,17 +29,9 @@ export default function Home() {
         end: window.innerHeight,
         onUpdate: e => direction = e.direction * -1
       },
-      x: "-500px",
     })
     requestAnimationFrame(animate);
-
-    
-
-
   }, [])
-
-    
-
 
   const animate = () => {
     if(xPercent < -100){
@@ -50,6 +44,8 @@ export default function Home() {
     gsap.set(secondText.current, {xPercent: xPercent})
     gsap.set(thirdText.current, {xPercent: xPercent})
     gsap.set(fourthText.current, {xPercent: xPercent})
+    gsap.set(fifthText.current, {xPercent: xPercent})
+    gsap.set(sixthText.current, {xPercent: xPercent})
     requestAnimationFrame(animate);
     xPercent += 0.1 * direction;
   }
@@ -69,6 +65,10 @@ export default function Home() {
         <div ref={slider} className={styles.slider}>
           <p ref={thirdText}>LUCAS VADLAMUDI -</p>
           <p ref={fourthText}>LUCAS VADLAMUDI -</p>
+        </div>
+        <div ref={slider} className={styles.slider}>
+          <p ref={fifthText}>LUCAS VADLAMUDI -</p>
+          <p ref={sixthText}>LUCAS VADLAMUDI -</p>
         </div>
       </div>
       <div data-scroll data-scroll-speed={0.1} className={styles.description}>
