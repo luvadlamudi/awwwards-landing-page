@@ -15,13 +15,21 @@ export default function Home() {
   const fourthText = useRef(null);
   const fifthText = useRef(null);
   const sixthText = useRef(null);
-  const slider = useRef(null);
+
+  const unoText = useRef(null);
+  const dosText = useRef(null);
+  const tresText = useRef(null);
+  const quatroText = useRef(null);
+  const cincoText = useRef(null);
+  const siesText = useRef(null);
+
+  const sliderz = useRef(null);
   let xPercent = 0;
-  let direction = -.5;
+  let direction = -1;
 
   useLayoutEffect( () => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(slider.current, {
+    gsap.to(sliderz.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         scrub: 0.25,
@@ -29,6 +37,7 @@ export default function Home() {
         end: window.innerHeight,
         onUpdate: e => direction = e.direction * -1
       },
+      x: "-500px",
     })
     requestAnimationFrame(animate);
   }, [])
@@ -46,6 +55,14 @@ export default function Home() {
     gsap.set(fourthText.current, {xPercent: xPercent})
     gsap.set(fifthText.current, {xPercent: xPercent})
     gsap.set(sixthText.current, {xPercent: xPercent})
+
+    gsap.set(unoText.current, {xPercent: xPercent})
+    gsap.set(dosText.current, {xPercent: xPercent})
+    gsap.set(tresText.current, {xPercent: xPercent})
+    gsap.set(quatroText.current, {xPercent: xPercent})
+    gsap.set(cincoText.current, {xPercent: xPercent})
+    gsap.set(siesText.current, {xPercent: xPercent})
+
     requestAnimationFrame(animate);
     xPercent += 0.1 * direction;
   }
@@ -54,29 +71,45 @@ export default function Home() {
     <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
       <Image 
         src="/images/background.jpg"
-        fill={true}
+        fill
         alt="background"
+        sizes= "(100vw, 700px)"
       />
       <div className={styles.sliderContainer}>
-        <div ref={slider} className={styles.slider}>
+        <div ref={sliderz} className={styles.slider}>
           <p ref={firstText}>LUCAS VADLAMUDI -</p>
-          <p ref={secondText}>LUCAS VADLAMUDI -</p>
+          <p ref={secondText}>LUCAS VADLAMUDI -</p> 
         </div>
-        <div ref={slider} className={styles.slider}>
+        <div ref={sliderz} className={styles.slider}>
           <p ref={thirdText}>LUCAS VADLAMUDI -</p>
           <p ref={fourthText}>LUCAS VADLAMUDI -</p>
         </div>
-        <div ref={slider} className={styles.slider}>
+        <div ref={sliderz} className={styles.slider}>
           <p ref={fifthText}>LUCAS VADLAMUDI -</p>
           <p ref={sixthText}>LUCAS VADLAMUDI -</p>
         </div>
+
+        <div ref={sliderz} className={styles.slider}>
+          <p className={styles.sliderText} ref={unoText}>LUCAS VADLAMUDI -</p>
+          <p className={styles.sliderText} ref={dosText}>LUCAS VADLAMUDI -</p>
+        </div>
+        <div ref={sliderz} className={styles.slider}>
+          <p className={styles.sliderText} ref={tresText}>LUCAS VADLAMUDI -</p>
+          <p className={styles.sliderText} ref={quatroText}>LUCAS VADLAMUDI -</p>
+        </div>
+        <div ref={sliderz} className={styles.slider}>
+          <p className={styles.sliderText} ref={cincoText}>LUCAS VADLAMUDI -</p>
+          <p className={styles.sliderText} ref={siesText}>LUCAS VADLAMUDI -</p>
+        </div>
       </div>
+
+
       <div data-scroll data-scroll-speed={0.1} className={styles.description}>
         <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z" fill="white"/>
         </svg>
-        <p>Freelance</p>
-        <p>Designer & Developer</p>
+        <p>beebo</p>
+        <p>Dasdasdasd</p>
       </div>
     </motion.main>
   )

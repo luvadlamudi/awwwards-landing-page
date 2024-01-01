@@ -1,53 +1,74 @@
-.landing{
-    position: relative;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+.landing {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
 
-    img{
-      object-fit: cover;
-    }
+  img {
+    z-index: 1; 
+    object-fit: cover;
+    scale: 0.9;
     
-    .sliderContainer{
-      position: absolute;
-      top: calc(100px);
-    }
     
-    .slider{
-      position: relative;
-      white-space: nowrap;
-    }
-    
-    .slider p{
-      position: relative;
+  }
+
+  .sliderContainer {
+    position: absolute;
+    top: calc(100px);
+  }
+
+  .slider {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .slider p {
+    position: relative;
+    margin: 0px;
+    color: white;
+    font-size: 250px;
+    font-weight: 700;
+    padding-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .slider p.stroke {
+    position: relative;
+    margin: 0px;
+    color: white;
+    font-size: 250px;
+    font-weight: 500;
+    padding-right: 5px;
+    letter-spacing: 2px; /* Add letter-spacing for the stroke effect */
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: white; /* Set the stroke color */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 20; /* Set a higher z-index for the text with stroke */
+  }
+
+  .slider p:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+
+  .description {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    p {
       margin: 0px;
-      color: white;
-      font-size: 250px;
-      font-weight: 500;
-      padding-right: 5px;
+      margin-bottom: 10px;
     }
-    
-    .slider p:nth-of-type(2){
-      position: absolute;
-      left: 100%;
-      top: 0;
-    }
-  
-    .description{
-      position: absolute;
-      top: 35%;
-      left: 65%;
-      color: white;
-      font-size: 24px;
-      font-weight: 300;
-      p{
-        margin: 0px;
-        margin-bottom: 10px;
-      }
-      svg{
-        transform: scale(2);
-        margin-bottom: 100px;
-      }
+    svg {
+      transform: scale(2);
+      margin-bottom: 100px;
     }
   }
-  
+}
