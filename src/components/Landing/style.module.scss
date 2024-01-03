@@ -6,10 +6,8 @@
   background-color: black;
 
   img {
-    z-index: 1; 
+    position: relative;
     object-fit: cover;
-    scale: 0.9;
-    
     
   }
 
@@ -22,8 +20,13 @@
     position: relative;
     white-space: nowrap;
   }
+  .stroke {
+    position: relative;
+    white-space: nowrap;
+  }
 
   .slider p {
+    z-index: 0;
     position: relative;
     margin: 0px;
     color: white;
@@ -33,23 +36,29 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  .slider p.stroke {
+  .stroke p {
+    z-index: 0;
     position: relative;
     margin: 0px;
     color: white;
     font-size: 250px;
-    font-weight: 500;
+    font-weight: 700;
     padding-right: 5px;
-    letter-spacing: 2px; /* Add letter-spacing for the stroke effect */
-    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: white; /* Set the stroke color */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    z-index: 20; /* Set a higher z-index for the text with stroke */
+    -webkit-text-stroke-color: white; 
+    
+    z-index: 33; 
   }
 
   .slider p:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+
+  .stroke p:nth-of-type(2) {
     position: absolute;
     left: 100%;
     top: 0;

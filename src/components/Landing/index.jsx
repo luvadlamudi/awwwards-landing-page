@@ -69,12 +69,16 @@ export default function Home() {
 
   return (
     <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
-      <Image 
-        src="/images/background.jpg"
-        fill
-        alt="background"
-        sizes= "(100vw, 700px)"
-      />
+
+      <div className={styles.img}>
+        <Image 
+            src="/images/background.jpg"
+            fill
+            
+          /> 
+      </div>
+        
+      
       <div className={styles.sliderContainer}>
         <div ref={sliderz} className={styles.slider}>
           <p ref={firstText}>LUCAS VADLAMUDI -</p>
@@ -89,17 +93,17 @@ export default function Home() {
           <p ref={sixthText}>LUCAS VADLAMUDI -</p>
         </div>
 
-        <div ref={sliderz} className={styles.slider}>
-          <p className={styles.sliderText} ref={unoText}>LUCAS VADLAMUDI -</p>
-          <p className={styles.sliderText} ref={dosText}>LUCAS VADLAMUDI -</p>
+        <div ref={sliderz} className={styles.stroke}>
+          <p ref={unoText}>LUCAS VADLAMUDI -</p>
+          <p ref={dosText}>LUCAS VADLAMUDI -</p>
         </div>
-        <div ref={sliderz} className={styles.slider}>
-          <p className={styles.sliderText} ref={tresText}>LUCAS VADLAMUDI -</p>
-          <p className={styles.sliderText} ref={quatroText}>LUCAS VADLAMUDI -</p>
+        <div ref={sliderz} className={styles.stroke}>
+          <p ref={tresText}>LUCAS VADLAMUDI -</p>
+          <p ref={quatroText}>LUCAS VADLAMUDI -</p>
         </div>
-        <div ref={sliderz} className={styles.slider}>
-          <p className={styles.sliderText} ref={cincoText}>LUCAS VADLAMUDI -</p>
-          <p className={styles.sliderText} ref={siesText}>LUCAS VADLAMUDI -</p>
+        <div ref={sliderz} className={styles.stroke}>
+          <p ref={cincoText}>LUCAS VADLAMUDI -</p>
+          <p ref={siesText}>LUCAS VADLAMUDI -</p>
         </div>
       </div>
 
