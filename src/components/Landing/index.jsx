@@ -72,7 +72,7 @@ export default function Home() {
 
       <div className={styles.img}>
         <Image 
-            src="/images/background.jpg"
+            src="/images/faces.svg"
             fill
             
           /> 
