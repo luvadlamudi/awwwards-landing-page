@@ -13,7 +13,8 @@
   img {
     position: relative;
     object-fit: cover;
-    visibility: hidden;
+    
+    z-index: 1;
     
   }
 
